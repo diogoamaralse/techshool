@@ -17,4 +17,9 @@ offset $2;
 -- name: UpdateAccounts :exec
 update accounts
 set balance = $2
-where id = $1;
+where id = $1
+returning *;
+
+-- name: DeleteAccount :exec
+DELETE FROM accounts
+WHERE id = $1;
