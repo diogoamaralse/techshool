@@ -13,3 +13,8 @@ SELECT * from accounts
 order by id
     LIMIT $1
 offset $2;
+
+-- name: UpdateAccounts :exec
+update accounts
+set balance = $2
+where id = $1;
